@@ -1,0 +1,89 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffe2fe;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #ff96ec;
+  max-width: 700px;
+  width: 650px;
+  height: 550px;
+  border-radius: 22px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card .main h1 {
+  margin: 0;
+  padding: 0;
+  color: rgb(62, 62, 62);
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card .main a {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  background-color: rgb(62, 62, 62);    
+  text-decoration: none;
+  padding: 15px 30px;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.card .main a:hover {
+    background-color: rgba(62, 62, 62, 0.95);
+}
+
+.card .main a:active {
+    background-color: rgb(130, 130, 130);
+}
+
+
+/* 1. Define the animation path */
+@keyframes floatUp {
+  0% {
+    /* Start at the bottom, fully opaque, and maybe slightly smaller */
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* End at the top, transparent, and maybe slightly larger */
+    transform: translateY(-500px) scale(1.2); /* Move up 500px */
+    opacity: 0;
+  }
+}
+
+/* 2. Style the heart element */
+.heart {
+  position: absolute; /* Crucial: Allows movement relative to its container (or body) */
+  bottom: 0;         /* Start at the very bottom of the container */
+  left: 50%;         /* Start roughly in the middle */
+  color: #ff0095;    /* Red color */
+  font-size: 50px;   /* Size of the heart emoji or icon */
+  user-select: none; /* Prevents text selection on the heart */
+  
+  /* Apply the animation */
+  animation: floatUp 4s ease-out forwards; 
+  /* 4s duration, ease-out timing (starts fast, slows down), forwards (stays at the end state) */
+}
